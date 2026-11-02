@@ -4,6 +4,10 @@ Protótipo navegável de uma demonstração Salesforce (console de sinistros), c
 
 **No ar:** https://romuload.github.io/porto-salerforce-demo/
 
+## Intro
+
+Ao abrir, uma intro de 5 s (`intro.css` e `intro.js`, baseada no frame 2115:9134 do Figma PORTO - Handoff) pulsa os anéis, monta o logo Porto Seguro e avisa que todos os dados são fictícios. Pode ser pulada pelo botão, por clique ou Esc; com movimento reduzido aparece estática.
+
 ## Fluxo
 
 1. **Dashboard**: Acompanhamento de Sinistros. O filtro de período muda todos os números.

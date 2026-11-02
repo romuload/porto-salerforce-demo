@@ -1,0 +1,76 @@
+/* Opening intro, 5 s: rings pulse, the Porto Seguro logo assembles, then the fictitious-data disclaimer.
+   Base styles are the final frame; keyframes start from the hidden state, so reduced motion shows it still. */
+.intro {
+  --u: min(100vh, 62.5vw); /* the Figma frame is 800 × 560; rings are sized from its height */
+  position: fixed; inset: 0; z-index: 10000;
+  display: grid; place-items: center; overflow: hidden;
+  background: #cff0f9; color: #10384a; font-family: var(--font);
+  animation: intro-out .7s cubic-bezier(.7, 0, .3, 1) 4.3s forwards;
+}
+body.intro-on { overflow: hidden; }
+
+.intro-ring, .intro-wave {
+  position: absolute; left: 50%; top: 50%; border-radius: 50%;
+  border: 1.33px solid #fff; background: rgb(255 255 255 / .07);
+  transform: translate(-50%, -50%);
+}
+.intro-ring { width: calc(var(--u) * var(--k)); aspect-ratio: 1; animation: ring-in 1s cubic-bezier(.2, .7, .2, 1) var(--d) both, ring-breathe 2.4s ease-in-out calc(var(--d) + 1s) infinite; }
+.intro-ring:nth-of-type(1) { --k: 1.007; --d: .05s; }
+.intro-ring:nth-of-type(2) { --k: 1.31; --d: .18s; }
+.intro-ring:nth-of-type(3) { --k: 1.614; --d: .31s; }
+/* Ripples that leave the logo and dissolve past the outer ring. */
+.intro-wave { width: calc(var(--u) * .62); aspect-ratio: 1; opacity: 0; background: none; border-width: 2px; animation: wave 2.4s cubic-bezier(.2, .6, .3, 1) var(--d) infinite; }
+.intro-wave:nth-of-type(4) { --d: .5s; }
+.intro-wave:nth-of-type(5) { --d: 1.3s; }
+.intro-wave:nth-of-type(6) { --d: 2.1s; }
+
+.intro-logo { position: relative; width: clamp(240px, 42vw, 560px); height: auto; overflow: visible; animation: logo-out .7s cubic-bezier(.7, 0, .3, 1) 4.3s forwards; }
+.intro-logo path, .intro-logo g { transform-box: fill-box; }
+.ps-tile { transform-origin: center; animation: tile-in .7s cubic-bezier(.3, 1.5, .5, 1) .45s both; }
+.ps-sail { animation: sail-in .6s cubic-bezier(.2, .7, .2, 1) both; }
+.ps-sail:nth-child(1) { animation-delay: .8s; }
+.ps-sail:nth-child(2) { animation-delay: .9s; }
+.ps-sail:nth-child(3) { animation-delay: 1s; }
+.ps-sail:nth-child(4) { animation-delay: 1.1s; }
+.ps-word { animation: word-in .8s cubic-bezier(.2, .7, .2, 1) both; }
+.ps-porto { animation-delay: 1.15s; }
+.ps-seguro { animation-delay: 1.35s; }
+
+.intro-note {
+  position: absolute; left: 50%; bottom: max(40px, 7vh); width: max-content; max-width: calc(100% - 32px);
+  display: flex; align-items: center; gap: 10px; padding: 11px 20px 11px 12px;
+  border: 1px solid #fff; border-radius: 999px; background: rgb(255 255 255 / .72);
+  box-shadow: 0 10px 30px rgb(2 90 130 / .12); font-size: 14px; line-height: 20px;
+  transform: translateX(-50%); animation: note-in .7s cubic-bezier(.2, .7, .2, 1) 2.05s both;
+}
+.intro-note b { font-weight: 700; }
+.intro-note i { flex: none; display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: #02b0e2; color: #fff; font: italic 700 13px/1 Georgia, serif; }
+.intro-progress { position: absolute; left: 0; bottom: 0; width: 100%; height: 3px; background: #02b0e2; transform-origin: left; animation: progress 4.3s linear both; }
+.intro-skip {
+  position: absolute; top: 18px; right: 18px; padding: 8px 14px; border: 1px solid rgb(16 56 74 / .25); border-radius: 999px;
+  background: rgb(255 255 255 / .5); color: inherit; font: inherit; font-size: 13px; cursor: pointer;
+}
+.intro-skip:hover { background: #fff; }
+.intro-skip:focus-visible { outline: 2px solid #0176d3; outline-offset: 2px; }
+.intro.is-leaving { animation: intro-out .35s ease forwards; }
+
+@keyframes ring-in { from { opacity: 0; transform: translate(-50%, -50%) scale(.55); } }
+@keyframes ring-breathe { 50% { transform: translate(-50%, -50%) scale(1.035); } }
+@keyframes wave { 0% { opacity: 0; transform: translate(-50%, -50%) scale(.6); } 15% { opacity: .9; } 100% { opacity: 0; transform: translate(-50%, -50%) scale(2.7); } }
+@keyframes tile-in { from { opacity: 0; transform: scale(.3) rotate(-8deg); } }
+@keyframes sail-in { from { opacity: 0; transform: translate(-22px, 10px); } }
+@keyframes word-in { from { opacity: 0; transform: translateY(22px); } }
+@keyframes note-in { from { opacity: 0; transform: translate(-50%, 16px); } }
+@keyframes progress { from { transform: scaleX(0); } }
+@keyframes logo-out { to { transform: scale(1.06); } }
+@keyframes intro-out { to { opacity: 0; visibility: hidden; } }
+
+@media (max-width: 600px) {
+  .intro { --u: 92vw; }
+  .intro-logo { width: 70vw; }
+  .intro-note { font-size: 13px; line-height: 18px; border-radius: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .intro *, .intro *::before { animation: none !important; }
+  .intro-wave { display: none; }
+}
