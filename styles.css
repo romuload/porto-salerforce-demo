@@ -499,8 +499,8 @@ body[data-page="caso"] .brand-band, body[data-page="analise"] .brand-band { top:
 .docs-empty { text-align: center; padding: 48px 0; color: var(--text-weak); }
 .docs-empty p { margin: 0 0 16px; }
 
-.side-col { display: flex; flex-direction: column; gap: 16px; }
-.side-card { background: #fff; border: 1px solid #dddbda; border-radius: 4px; overflow: visible; }
+.side-col { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.side-card { min-width: 0; background: #fff; border: 1px solid #dddbda; border-radius: 4px; overflow: visible; }
 .side-card > header { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; border-bottom: 1px solid var(--border-light); border-radius: 4px 4px 0 0; }
 .side-card > header.is-gray { background: var(--bg-secondary); }
 .side-card h2 { margin: 0; display: flex; align-items: center; gap: 16px; font-size: 16px; line-height: 24px; font-weight: 700; color: #353535; }
@@ -513,8 +513,8 @@ body[data-page="caso"] .brand-band, body[data-page="analise"] .brand-band { top:
 .side-fields { display: flex; flex-direction: column; gap: 10px; padding: 10px; }
 .side-fields .field-row.cols-2 > .field { flex: 1 1 0; }
 
-.comment { padding: 10px; border-bottom: 1px solid var(--bg-secondary); display: flex; flex-direction: column; gap: 4px; font-size: 12px; line-height: 18px; color: var(--text-weak); }
-.comment p { margin: 0; white-space: pre; }
+.comment { min-width: 0; padding: 10px; border-bottom: 1px solid var(--bg-secondary); display: flex; flex-direction: column; gap: 4px; font-size: 12px; line-height: 18px; color: var(--text-weak); }
+.comment p { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
 .comment-head { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 4px; }
 .comment-head img:first-child { margin-top: 4px; }
 .comment-head a { font-size: 13px; line-height: 20px; font-weight: 700; color: var(--link); }
