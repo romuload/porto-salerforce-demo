@@ -1,0 +1,14 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="circle image medium">
+<circle id="Oval" cx="16" cy="16" r="16" fill="#34BECD"/>
+<mask id="mask0_0_718" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+<circle id="Oval_2" cx="16" cy="16" r="16" fill="white"/>
+</mask>
+<g mask="url(#mask0_0_718)">
+<g id="avatar">
+<path id="Fill 1" d="M23.1111 21.0252V21.6889C23.1111 22.4711 22.4711 23.1111 21.6889 23.1111H10.3111C9.52889 23.1111 8.88889 22.4711 8.88889 21.6889V21.0252C8.88889 19.2948 10.9037 18.2519 12.8 17.4222C12.8711 17.3985 12.9185 17.3748 12.9896 17.3274C13.1319 17.2563 13.2978 17.2563 13.44 17.3511C14.1985 17.8489 15.0756 18.1333 16 18.1333C16.9244 18.1333 17.8015 17.8489 18.56 17.3748C18.7022 17.28 18.8681 17.28 19.0104 17.3511C19.0815 17.3748 19.1289 17.3985 19.2 17.4459C21.0963 18.2519 23.1111 19.2948 23.1111 21.0252" fill-rule="evenodd" clip-rule="evenodd" fill="white"/>
+<path id="Fill 3" d="M16 8.88889C17.9506 8.88889 19.5319 10.6399 19.5319 12.8C19.5319 14.9601 17.9506 16.7111 16 16.7111C14.0494 16.7111 12.4681 14.9601 12.4681 12.8C12.4681 10.6399 14.0494 8.88889 16 8.88889" fill-rule="evenodd" clip-rule="evenodd" fill="white"/>
+</g>
+</g>
+</g>
+</svg>
